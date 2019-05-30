@@ -27,7 +27,7 @@ public class VenueController {
 	@Autowired
 	VenueService venueService;
 	
-	@ApiOperation(value = "Returns the list of all the Event Groups")
+	@ApiOperation(value = "Returns the list of all the Venue Details")
 	@GetMapping(path = "/list", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public StandardResponse<List<VenueDetails>> listAll() throws Exception {
 		logger.info("Begin VenueController::listAll");
