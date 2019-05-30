@@ -6,7 +6,7 @@ workflows:
   - name: build-and-push
     pipelines:
       - name: build
-      - name: push-to-oci-registry
+      - name: push-image
         requires:
           - build
 
@@ -30,7 +30,7 @@ build:
         code: |
               cp ./target/*.jar $WERCKER_OUTPUT_DIR/venue-management.jar
               
-push-to-oci-registry:
+push-image:
   box:
     id: openjdk
     tag: 8-jre-alpine
