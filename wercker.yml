@@ -48,7 +48,7 @@ push-image:
         registry: https://$OCIR_REGISTRY/
         volumes: /tmp
         cmd: java -jar /venue-management.jar
-        ports: 8086
+        ports: 8087
         
     
     
