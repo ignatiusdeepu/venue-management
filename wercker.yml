@@ -15,6 +15,16 @@ build:
   steps:
     - xenoterracide/maven:
         goals: clean package spring-boot:repackage
+    - script:
+      name: Cleanup maven local repo
+      code: |
+        find ${WERCKER_CACHE_DIR} -type d -name "*SNAPSHOT" -ls -exec rm -rf {} +
+        echo "------"
+        du -hs ${WERCKER_CACHE_DIR}
+        echo "------"
+        du -hs ${WERCKER_CACHE_DIR}/* | sort -h
+        echo "------"
+        du -hs * | sort -h
     - script: 
         name: copy package to output
         code: |
