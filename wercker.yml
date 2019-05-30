@@ -1,0 +1,46 @@
+box: maven:latest
+command-timeout: 30
+no-response-timeout: 15
+
+workflows:
+  - name: build-and-push
+    pipelines:
+      - name: build
+      - name: push-to-oci-registry
+        requires:
+          - build
+
+build:
+  base-path: /go/src/github.com/wercker/wercker
+  steps:
+    - xenoterracide/maven:
+        goals: clean package spring-boot:repackage
+    - script: 
+        name: copy package to output
+        code: |
+              cp ./target/*.jar $WERCKER_OUTPUT_DIR/$ARTIFACT_ID
+              
+push-to-oci-registry:
+  box:
+    id: openjdk
+    tag: 8-jre-alpine
+  steps:
+    - script:
+        name: Move the jar to current dir
+        code: |
+            mv $WERCKER_SOURCE_DIR/$ARTIFACT_ID /$ARTIFACT_ID
+            touch /$ARTIFACT_ID
+    - internal/docker-push: 
+        username: $OCIR_USERNAME
+        password: $OCIR_PASSWORD    
+        repository: $OCIR_REPOSITORY 
+        tag: latest
+        registry: https://$OCIR_REGISTRY/
+        volumes: /tmp
+        cmd: java -jar /$ARTIFACT_ID
+        ports: 8086
+        
+    
+    
+               
+              

@@ -1,0 +1,44 @@
+server:
+  port: 8087
+  servlet:
+        contextPath: /venue-management
+        
+spring:
+  jackson:
+    date-format: MM/dd/yyyy
+        
+venue-details:
+  venueDetailsList:
+    -
+      id: 1
+      name: Olympic Stadium
+      description: The National Stadium was used as the main stadium for the Tokyo 1964 Olympic Games
+      address: 
+        addressLine1: 10-2 Kasumigaokamachi
+        addressLine2: 
+        city: Shinjuku-ku
+        state: Tōkyō-to
+        country: Tōkyō-to
+        zipCode: 160-0013
+    -
+      id: 2
+      name: Tokyo Metropolitan Gymnasium
+      description: Built in 1954 for the World Wrestling Championship, it was also used for gymnastics
+      address: 
+        addressLine1: 1-17-1 Sendagaya
+        addressLine2: 
+        city: Shibuya-ku
+        state: Tokyo
+        country: Tokyo
+        zipCode: 160-0013
+    -
+      id: 2
+      name: Yoyogi National Stadium
+      description: Yoyogi National Gymnasium is famous for its suspension roof design
+      address: 
+        addressLine1: 2-1-1 Jinnan
+        addressLine2: 
+        city: Shibuya-ku
+        state: Tokyo
+        country: Tokyo
+        zipCode: 160-0013
