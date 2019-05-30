@@ -6,7 +6,8 @@ server:
 spring:
   jackson:
     date-format: MM/dd/yyyy
-        
+
+   
 venue-details:
   venueDetailsList:
     -
