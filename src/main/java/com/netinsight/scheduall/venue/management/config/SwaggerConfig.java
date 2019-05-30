@@ -62,7 +62,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
 		Parameter headerParam = new ParameterBuilder().name(CONTENT_TYPE).modelRef(new ModelRef(TYPE_STR)).parameterType(HEADER).required(true).defaultValue(MediaType.APPLICATION_JSON_VALUE).build();
         
 		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any())
-				.paths(PathSelectors.any()).paths(Predicates.not(PathSelectors.regex(ERROR_PATH)))
+				.paths(PathSelectors.any()).paths(Predicates.not(PathSelectors.regex(ERROR_PATH))).paths(Predicates.not(PathSelectors.regex(ACTUATOR_PATH)))
 				.build().apiInfo(metadata())
 				.pathMapping(BACK_SLASH).globalOperationParameters(Arrays.asList(headerParam,autherizationParam));
 	}
