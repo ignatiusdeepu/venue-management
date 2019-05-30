@@ -15,6 +15,7 @@ public class VenueManagementApplication {
 	public static void main(String[] args) {
 		logger.debug("Begin VenueManagementApplication::main");
 		String environment = System.getenv(NI_ENV);
+		
 		new SpringApplicationBuilder().sources(VenueManagementApplication.class).profiles(environment).build().run(args);
 		logger.debug("End VenueManagementApplication::main");
 	}
