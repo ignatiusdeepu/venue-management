@@ -49,9 +49,9 @@ public class SwaggerConfig implements WebMvcConfigurer {
 	}
 
 	private ApiInfo metadata() {
-		final ApiInfo apiInfo = new ApiInfo("BPMLinks POC on Oracle Cloud", "BPMLinks POC on Oracle Cloud", "1.0", "",
-				new springfox.documentation.service.Contact("BPMLinks", "https://bpmlinks.com/", "info@bpmlinks.com"),
-				"BPMLinks", "", new ArrayList<VendorExtension>());
+		final ApiInfo apiInfo = new ApiInfo("Venue Management API on Oracle Cloud", "Venue Management API", "1.0", "",
+				new springfox.documentation.service.Contact("NetInsight", "https://netinsight.com/", "info@netinsight.com"),
+				"NetInsight", "", new ArrayList<VendorExtension>());
 		return apiInfo;
 	}
 
