@@ -18,7 +18,7 @@ build:
     - script: 
         name: copy package to output
         code: |
-              cp ./target/*.jar $WERCKER_OUTPUT_DIR/$ARTIFACT_ID
+              cp ./target/*.jar $WERCKER_OUTPUT_DIR/venue-management.jar
               
 push-to-oci-registry:
   box:
@@ -28,8 +28,8 @@ push-to-oci-registry:
     - script:
         name: Move the jar to current dir
         code: |
-            mv $WERCKER_SOURCE_DIR/$ARTIFACT_ID /$ARTIFACT_ID
-            touch /$ARTIFACT_ID
+            mv $WERCKER_SOURCE_DIR/venue-management.jar /venue-management.jar
+            touch /venue-management.jar
     - internal/docker-push: 
         username: $OCIR_USERNAME
         password: $OCIR_PASSWORD    
@@ -37,7 +37,7 @@ push-to-oci-registry:
         tag: latest
         registry: https://$OCIR_REGISTRY/
         volumes: /tmp
-        cmd: java -jar /$ARTIFACT_ID
+        cmd: java -jar /venue-management.jar
         ports: 8086
         
     
