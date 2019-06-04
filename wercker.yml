@@ -13,6 +13,10 @@ workflows:
 build:
   base-path: /go/src/github.com/wercker/wercker
   steps:
+    - script: 
+        name: copy package to output
+        code: |
+              ls ${WERCKER_CACHE_DIR}/com/netinsight/scheduall/netinsight-core
     - markxnelson/maven@1.3.5:
         goals: clean package spring-boot:repackage
         cache_repo: true
