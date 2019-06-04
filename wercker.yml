@@ -49,8 +49,6 @@ push-image:
         volumes: /tmp
         cmd: java -jar /venue-management.jar
         ports: 8087
-        
-    
     
                
               
