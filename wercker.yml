@@ -15,6 +15,7 @@ build:
   steps:
     - xenoterracide/maven:
         goals: clean package spring-boot:repackage
+        cache_repo: true
     - script: 
         name: copy package to output
         code: |
