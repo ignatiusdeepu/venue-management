@@ -1,4 +1,4 @@
-package com.netinsight.scheduall.venue.management;
+package com.netinsight.scheduall;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

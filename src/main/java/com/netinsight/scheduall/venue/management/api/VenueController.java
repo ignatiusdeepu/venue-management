@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.netinsight.scheduall.venue.management.domain.response.StandardResponse;
+import com.netinsight.scheduall.core.domain.response.StandardResponse;
 import com.netinsight.scheduall.venue.management.domain.response.VenueDetails;
 import com.netinsight.scheduall.venue.management.service.VenueService;
 

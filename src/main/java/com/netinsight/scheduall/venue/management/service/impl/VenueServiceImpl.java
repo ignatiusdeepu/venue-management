@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.netinsight.scheduall.core.exception.ApplicationException;
 import com.netinsight.scheduall.venue.management.dao.VenueRepository;
 import com.netinsight.scheduall.venue.management.domain.response.VenueDetails;
 import com.netinsight.scheduall.venue.management.service.VenueService;
@@ -24,7 +25,8 @@ public class VenueServiceImpl implements VenueService{
 		logger.info("Begin VenueServiceImpl::listAll");
 		 List<VenueDetails> venueDetailsList = venueRepository.findAll();
 		logger.info("Begin VenueServiceImpl::listAll");
-		return venueDetailsList;
+		throw new ApplicationException("asd");
+		//return venueDetailsList;
 	}
 	
 }
