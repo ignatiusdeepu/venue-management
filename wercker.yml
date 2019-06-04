@@ -13,7 +13,7 @@ workflows:
 build:
   base-path: /go/src/github.com/wercker/wercker
   steps:
-    - xenoterracide/maven:
+    - markxnelson/maven@1.3.5:
         goals: clean package spring-boot:repackage
         cache_repo: true
     - script: 
